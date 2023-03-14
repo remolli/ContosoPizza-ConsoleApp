@@ -2,6 +2,9 @@
 using LearningEntityFrameworkCore.Data;
 using LearningEntityFrameworkCore.Views;
 using Microsoft.EntityFrameworkCore;
+using LearningEntityFrameworkCore.Views.Menu;
+using LearningEntityFrameworkCore.Views.User;
+using LearningEntityFrameworkCore.Views.Dev;
 
 using ContosoPizzaContext context = new ContosoPizzaContext();
 
@@ -17,7 +20,6 @@ try
     Console.WriteLine();
     Outros.RedMessage("Caso queira deletar o banco de dados");
     Outros.RedMessage("Escreva 'deletar'");
-    Console.WriteLine();
 
     var escolha = Console.ReadLine().Replace(" ", "").ToLower();
     if (escolha == "1")
@@ -57,10 +59,7 @@ catch
         Outros.GreenMessage("Database Criada.");
         Console.WriteLine("Carregando aplicação...");
         Thread.Sleep(3000);
-        int? UserOrDev = MenuViews.Menu();
-        if (UserOrDev == 1) { DevEnvironment.Product(context); }
-        else if (UserOrDev == 2) { UserAuth.UserMenu(context); }
-        else { Outros.RedMessage("Escreva apenas o número."); }
+        MenuViews.Menu(context);
     }
     else
     {

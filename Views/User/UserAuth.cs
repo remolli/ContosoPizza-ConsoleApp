@@ -1,18 +1,20 @@
 ﻿using LearningEntityFrameworkCore.Data;
 using LearningEntityFrameworkCore.Models;
+using LearningEntityFrameworkCore.Views.Sistema;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LearningEntityFrameworkCore.Views
+namespace LearningEntityFrameworkCore.Views.User
 {
     public class UserAuth
     {
         public UserAuth() {  }
         public static void UserMenu(ContosoPizzaContext context)
         {
+            Console.Clear();
             Outros.ContosoPizza();
             Console.WriteLine("1 - Logar");
             Console.WriteLine("2 - Cadastrar");
@@ -26,11 +28,12 @@ namespace LearningEntityFrameworkCore.Views
                 else { Outros.RedMessage("Escreva apenas o número."); }
             }
             catch { Outros.RedMessage("Escreva o número da sua escolha."); }
-            finally { Outros.PressAnyButton(); }
+            finally { Menu.MenuViews.Menu(context); }
         }
 
         public static void Cadastrar(ContosoPizzaContext context)
         {
+            Console.Clear();
             var user = new Customer();
             Outros.BlueMessage("> Cadastro");
             Console.WriteLine();
@@ -62,6 +65,7 @@ namespace LearningEntityFrameworkCore.Views
         }
         public static void Logar(ContosoPizzaContext context)
         {
+            Console.Clear();
             Outros.BlueMessage("> Login");
             Console.WriteLine();
             Console.Write("Primeiro nome: ");
@@ -69,14 +73,13 @@ namespace LearningEntityFrameworkCore.Views
             Console.Write("Sobrenome: ");
             var lastName = Console.ReadLine();
 
-            var userFromDB = from user in context.Costumers
-                       where user.FirstName == firstName && user.LastName == lastName
-                       select user;
+            var userFromDB = context.Costumers.FirstOrDefault(user => 
+                (user.FirstName == firstName) && (user.LastName == lastName));
 
             if (userFromDB != null) 
             {
                 Outros.GreenMessage("Login efetuado com sucesso!");
-                SistemaViews.Entrar(); 
+                SistemaViews.Inicio(); 
             }
             else { Outros.RedMessage("Nome ou Sobrenome incorretos."); }
         }

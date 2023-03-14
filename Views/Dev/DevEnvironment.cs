@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LearningEntityFrameworkCore.Views
+namespace LearningEntityFrameworkCore.Views.Dev
 {
     public static class DevEnvironment
     {

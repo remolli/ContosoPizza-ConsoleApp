@@ -1,11 +1,13 @@
 ﻿using LearningEntityFrameworkCore.Data;
+using LearningEntityFrameworkCore.Views.Dev;
+using LearningEntityFrameworkCore.Views.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LearningEntityFrameworkCore.Views
+namespace LearningEntityFrameworkCore.Views.Menu
 {
     public class MenuViews
     {
@@ -13,7 +15,14 @@ namespace LearningEntityFrameworkCore.Views
         {
 
         }
-        public static int? Menu()
+        public static void Menu(ContosoPizzaContext context)
+        {
+            int? UserOrDev = DevOrUser();
+            if (UserOrDev == 1) { DevEnvironment.Product(context); }
+            else if (UserOrDev == 2) { UserAuth.UserMenu(context); }
+            else { Outros.RedMessage("Escreva apenas o número."); }
+        }
+        public static int? DevOrUser()
         {
             Console.Clear();
             Outros.BemVindo();
@@ -32,7 +41,6 @@ namespace LearningEntityFrameworkCore.Views
                 else { return null; }
             }
             catch { Outros.RedMessage("Escreva o número da sua escolha."); return null; }
-            finally { Outros.PressAnyButton(); }
         }
     }
 }
