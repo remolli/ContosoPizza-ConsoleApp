@@ -1,4 +1,7 @@
-ContosoPizza
-- Aplicação apenas com manipulação dos dados da Tabela/Entidade Products
+# ContosoPizza
+
+Ferramentas da aplicação:
+- Manipulação da Tabela Products
+- Sistema de Cadastro e Login
 
 Atualizações em breve!
