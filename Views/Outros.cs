@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LearningEntityFrameworkCore.Views.Menu;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,12 @@ namespace LearningEntityFrameworkCore.Views
 {
     public static class Outros
     {
+        public static void CloseApp()
+        {
+            Console.WriteLine();
+            BlueMessage("Até a próxima!");
+            Environment.Exit(0);
+        }
         public static void EscrevaCorretamente()
         {
             Console.WriteLine();

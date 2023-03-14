@@ -18,7 +18,7 @@ namespace LearningEntityFrameworkCore.Views.Menu
         public static void Menu(ContosoPizzaContext context)
         {
             int? UserOrDev = DevOrUser();
-            if (UserOrDev == 1) { DevEnvironment.Product(context); }
+            if (UserOrDev == 1) { DevViews.Product(context); }
             else if (UserOrDev == 2) { UserAuth.UserMenu(context); }
             else { Outros.RedMessage("Escreva apenas o número."); }
         }
@@ -41,6 +41,12 @@ namespace LearningEntityFrameworkCore.Views.Menu
                 else { return null; }
             }
             catch { Outros.RedMessage("Escreva o número da sua escolha."); return null; }
+        }
+        public static void CarregaApp(ContosoPizzaContext context)
+        {
+            Console.WriteLine("Carregando aplicação...");
+            Thread.Sleep(3000);
+            MenuViews.Menu(context);
         }
     }
 }

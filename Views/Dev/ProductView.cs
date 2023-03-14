@@ -10,7 +10,7 @@ using LearningEntityFrameworkCore.Models;
 using System.Linq.Expressions;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace LearningEntityFrameworkCore.Views
+namespace LearningEntityFrameworkCore.Views.Dev
 {
     public class ProductView
     {
@@ -30,7 +30,7 @@ namespace LearningEntityFrameworkCore.Views
                 var product = productController.CreateProduct(context, name, price);
                 if (name != null && price != null)
                 {
-                    if (product != null )
+                    if (product != null)
                     {
                         Outros.GreenText();
                         Console.WriteLine($"Produto '{product.Name}' Criado!");
@@ -59,7 +59,7 @@ namespace LearningEntityFrameworkCore.Views
 
                     Console.WriteLine("Deseja atualizar o 'Nome', 'Preco' ou 'Tudo'?");
                     var escolha = Console.ReadLine().ToLower().Replace(" ", "");
-            
+
                     if (escolha == "nome")
                     {
                         Console.Write("Nome do Produto: ");
@@ -120,7 +120,7 @@ namespace LearningEntityFrameworkCore.Views
                 else { Outros.RedMessage("Produto não encontrado."); }
             }
             catch { Outros.RedMessage("Valor Inválido."); }
-            finally { Outros.PressAnyButton();}
+            finally { Outros.PressAnyButton(); }
 
         }
         public void TelaDeleteProduct(ContosoPizzaContext context)

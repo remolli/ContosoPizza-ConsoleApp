@@ -30,23 +30,18 @@ namespace LearningEntityFrameworkCore.Views.Menu
             var escolha = Console.ReadLine().Replace(" ", "").ToLower();
             if (escolha == "1")
             {
-                Console.WriteLine("Carregando aplicação...");
-                Thread.Sleep(3000);
-                MenuViews.Menu(context);
+                MenuViews.CarregaApp(context); 
             }
             else if (escolha == "deletar")
             {
                 Console.WriteLine("Deletando database...");
                 context.Database.EnsureDeleted();
                 Outros.GreenMessage("Database Deletada!");
-                Outros.BlueMessage("Até a proxima!");
-                Environment.Exit(0);
+                Outros.CloseApp();
             }
             else
             {
-                Console.WriteLine();
-                Outros.BlueMessage("Até a próxima!");
-                Environment.Exit(0);
+                Outros.RedMessage("Escreva '1' para acessar ou 'deletar' para deletar.");
             }
         }
         public static void TentaCriarDB(ContosoPizzaContext context)
@@ -62,16 +57,9 @@ namespace LearningEntityFrameworkCore.Views.Menu
                 Console.WriteLine("Criando Database...");
                 context.Database.EnsureCreated();
                 Outros.GreenMessage("Database Criada.");
-                Console.WriteLine("Carregando aplicação...");
-                Thread.Sleep(3000);
-                MenuViews.Menu(context);
+                MenuViews.CarregaApp(context);
             }
-            else
-            {
-                Console.WriteLine();
-                Outros.BlueMessage("Até a próxima!");
-                Environment.Exit(0);
-            }
+            else { Outros.CloseApp(); }
         }
     }
 }
