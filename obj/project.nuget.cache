@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "A0hBJcbavKGFzYRU2MWeHC2EF/CpH98SfHW3o1CTi18iKfizemXspgUuJKehRNHdnYyGuHhPaulF2999FLBHag==",
+  "dgSpecHash": "vizGY5ocxrUIqyooUxb/tAQytdimUphC4SqC8Mw0/VU2V4y7lm0tRlXRd/5GgeWjP3eZ6/kDtEBPlBj5HEBi9w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Win10\\Desktop\\estudando\\C#\\LearningEntityFrameworkCore\\LearningEntityFrameworkCore.csproj",
+  "projectFilePath": "C:\\Users\\Win10\\Desktop\\GITHUB\\LearningEntityFrameworkCore\\LearningEntityFrameworkCore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Win10\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Win10\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

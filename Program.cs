@@ -24,7 +24,7 @@ try
     {
         Console.WriteLine("Carregando aplicação...");
         Thread.Sleep(3000);
-        DevEnvironment.Product(context);
+        MenuViews.Menu();
     }
     else if (escolha == "deletar")
     {
@@ -54,7 +54,10 @@ catch
         Outros.GreenMessage("Database Criada.");
         Console.WriteLine("Carregando aplicação...");
         Thread.Sleep(3000);
-        DevEnvironment.Product(context);
+        int? UserOrDev = MenuViews.Menu();
+        if (UserOrDev == 1) { DevEnvironment.Product(context); }
+        else if (UserOrDev == 2) { UserEnvironment.UserMenu(); }
+        else { Outros.RedMessage("Escreva apenas o número."); }
     }
     else
     {

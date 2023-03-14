@@ -3468,11 +3468,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Win10\\Desktop\\estudando\\C#\\LearningEntityFrameworkCore\\LearningEntityFrameworkCore.csproj",
+      "projectUniqueName": "C:\\Users\\Win10\\Desktop\\GITHUB\\LearningEntityFrameworkCore\\LearningEntityFrameworkCore.csproj",
       "projectName": "LearningEntityFrameworkCore",
-      "projectPath": "C:\\Users\\Win10\\Desktop\\estudando\\C#\\LearningEntityFrameworkCore\\LearningEntityFrameworkCore.csproj",
+      "projectPath": "C:\\Users\\Win10\\Desktop\\GITHUB\\LearningEntityFrameworkCore\\LearningEntityFrameworkCore.csproj",
       "packagesPath": "C:\\Users\\Win10\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Win10\\Desktop\\estudando\\C#\\LearningEntityFrameworkCore\\obj\\",
+      "outputPath": "C:\\Users\\Win10\\Desktop\\GITHUB\\LearningEntityFrameworkCore\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
