@@ -26,10 +26,7 @@ try
     {
         Console.WriteLine("Carregando aplicação...");
         Thread.Sleep(3000);
-        int? UserOrDev = MenuViews.Menu();
-        if (UserOrDev == 1) { DevEnvironment.Product(context); }
-        else if (UserOrDev == 2) { UserAuth.UserMenu(context); }
-        else { Outros.RedMessage("Escreva apenas o número."); }
+        MenuViews.Menu(context);
     }
     else if (escolha == "deletar")
     {
